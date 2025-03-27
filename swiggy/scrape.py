@@ -91,7 +91,7 @@ class SwiggyScrape:
 class Restaurant:
     def __init__(self, ID, start_avg=3, weight=100):
         self.id = ID
-        self.lan, self.lng = SwiggyAPI().currentLocation()
+        self.lan, self.lng = SwiggyScrape().currentLocation()
         self.start_avg = start_avg
         self.weight = weight
 
@@ -195,7 +195,7 @@ class Restaurant:
 
 if __name__ == "__main__":
     try:
-        swiggy = SwiggyAPI()
+        swiggy = SwiggyScrape()
         restaurants = swiggy.getResturants("Biryani")
         
         if restaurants:
